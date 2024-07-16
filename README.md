@@ -9,7 +9,7 @@ Programming Golan Telegram bot
 New features added in v1.0.5
 
 1. Usage of Makefile
-2. Possibility to specifically build an executable depending on the input, for example 'make linux'
+2. Possibility to specifically build an executable depending on the input (examples: 'make linux', or 'make windows' or 'make macos')
 3. Docker file builds an image using OS and architecture values passed through the variables
 4. GCP is used as alternative repostiory for the docker push command set via configurable variable in Makefile
 5. Clean command is set to remove created docker image
