@@ -7,7 +7,7 @@ replicaCount: 1
 image:
   repository: olegign82
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "v1.0.7"
+  tag: "v1.0.5-05e682a-amd64-d43f275"
 
 secret:
   name: kbot
