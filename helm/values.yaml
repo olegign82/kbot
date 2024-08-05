@@ -7,10 +7,11 @@ replicaCount: 1
 image:
   repository: olegign82
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "v1.0.5-05e682a-amd64-d43f275"
+  tag: "v1.11.0"
+  arch: amd64
 
 secret:
   name: kbot
-  tokenKey: token
-  tokenName: TELE_TOKEN
+  key: TELE_TOKEN
+  env: TELE_TOKEN
 
