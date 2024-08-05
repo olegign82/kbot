@@ -26,6 +26,12 @@ jobs:
         with:
           credentials_json: '${{ secrets.GOOGLE_CREDENTIALS }}' # Replace with the name of your GitHub Actions secret
 
+      - name: Build&Push
+        env:
+          APP: "kbot"
+          REGISTRY: ${{ secrets.DOCKERHUB_USERNAME }}
+        run: make image push
+
 
 
 
