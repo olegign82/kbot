@@ -1,33 +1,27 @@
+variables:
+  OS_CHOICES:
+    value: linux
+    options: 
+      - "linux"
+      - "darwin"
+      - "windows"
+
+  ARCH_CHOICES:
+    value: amd64
+    options: 
+      - "amd64"
+      - "arm64"
+
 
 stages:
-  - example
+  - build
 
-variables:
-  OS:
-    value: "linux"
-
-.example_template:
-  stage: example
+build:
+  stage: build
+  variables:
+    OS: $OS_CHOICES
+    ARCH: $ARCH_CHOICES
   script:
-    - echo "Build for platform $OS"
-    - echo "Build for arch: ${ARCH}"
-
-job linux:
-  extends: .example_template
-  variables:
-    OS: linux
-
-job darwin:
-  extends: .example_template
-  variables:
-    OS: darwin
-
-job windows:
-  extends: .example_template
-  variables:
-    OS: windows
-
-job all:
-  extends: .example_template
-  variables:
-    OS: all
+    - |
+      echo "Build for platform $OS"
+      echo "Build for arch: $ARCH"
