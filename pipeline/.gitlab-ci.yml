@@ -1,0 +1,33 @@
+
+stages:
+  - example
+
+variables:
+  OS:
+    value: "linux"
+
+.example_template:
+  stage: example
+  script:
+    - echo "Build for platform $OS"
+    - echo "Build for arch: ${ARCH}"
+
+job linux:
+  extends: .example_template
+  variables:
+    OS: linux
+
+job darwin:
+  extends: .example_template
+  variables:
+    OS: darwin
+
+job windows:
+  extends: .example_template
+  variables:
+    OS: windows
+
+job all:
+  extends: .example_template
+  variables:
+    OS: all
