@@ -13,3 +13,10 @@ New features added in v1.0.5
 3. Docker file builds an image using OS and architecture values passed through the variables
 4. GCP is used as alternative repostiory for the docker push command set via configurable variable in Makefile
 5. Clean command is set to remove created docker image
+
+
+Added GitLeaks feature to avoid commiting with secrets.
+
+The following gitleaks options were added and tested:
+1. Gitleaks via pre-commit script
+2. Gitleaks using GitHub Actions
