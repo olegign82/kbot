@@ -7,7 +7,7 @@ image:
   registry: "ghcr.io"
   repository: olegign82
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "v1.0.6-2046dd4"
+  tag: "v1.0.6-2d8f2da"
   os: linux
   arch: amd64
 secret:
