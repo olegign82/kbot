@@ -20,3 +20,4 @@ Added GitLeaks feature to avoid commiting with secrets.
 The following gitleaks options were added and tested:
 1. Gitleaks via pre-commit script
 2. Gitleaks using GitHub Actions
+
