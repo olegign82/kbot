@@ -19,12 +19,19 @@ jobs:
 
       - name: Run test
         run: make test
-      - name: GitHub Container registry login
-        uses: docker/login-action@v3
+      
+      - name: Docker Hub login
+        uses: docker/login-action@v2
         with:
-          registry: ${{ secrets.GHCR }}
-          username: ${{ github.actor }}
-          password: ${{ secrets.GHCR_TOKEN }}
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      #- name: GitHub Container registry login
+      #  uses: docker/login-action@v3
+      #  with:
+      #    registry: ${{ secrets.GHCR }}
+      #    username: ${{ github.actor }}
+      #    password: ${{ secrets.GHCR_TOKEN }}
       #- name: GCloud login
       #  uses: 'google-github-actions/auth@v2'
       #  with:
@@ -33,7 +40,8 @@ jobs:
       - name: Build&Push
         env:
           APP: "kbot"
-          REGISTRY: ${{ secrets.GHCR }}
+          REGISTRY: ${{ secrets.DOCKERHUB_USERNAME }}
+          #REGISTRY: ${{ secrets.GHCR }}
         run: make image push
 
   cd:
