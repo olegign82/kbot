@@ -7,13 +7,10 @@ image:
   registry: "ghcr.io"
   repository: olegign82
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "v1.0.6-bf2e0d7"
+  tag: "v1.0.6-6a7fd49"
   os: linux
   arch: amd64
 secret:
   name: kbot
   key: TELE_TOKEN
   env: TELE_TOKEN
-
-
-
